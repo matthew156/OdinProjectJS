@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Rock, Paper, Scissors</h1>
+    <p>To begin open the console and fight the computer!</p>
+</body>
+<script>
+function computerPlay(){
+    let randomNumber = Math.floor(Math.random()*3)+1
+    let move;
+    if(randomNumber == 1)
+    {
+        move = 'Rock';
+    }
+    if(randomNumber == 2)
+    {
+        move = 'Paper';
+    }if(randomNumber == 3)
+    {
+        move = 'Scissors';
+    }
+    return move
+    
+}
+function round(playerSelection, computerSelection=computerPlay()){
+// Makes the input case insensitive
+    let playerChoice = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1).toLowerCase()
+
+// If the inputs are the same
+if(playerSelection == computerSelection)
+return "Draw"
+
+// All the logic for Rock (Win or Lose)
+else if(playerChoice == "Rock" && computerSelection == "Scissors")
+return `You win this round! Computer Choice: ${computerSelection}`
+
+else if(playerChoice == "Rock" && computerSelection == "Paper")
+return `You lost this round! Computer Choice: ${computerSelection}`
+
+
+// Logic for Scissors
+else if(playerChoice == "Scissors" && computerSelection == "Paper")
+return `You win this round! Computer Choice: ${computerSelection}`
+
+else if(playerChoice == "Scissors" && computerSelection == "Rock")
+return `You lost this round! Computer Choice: ${computerSelection}`
+
+
+// Logic for Paper
+else if(playerChoice == "Paper" && computerSelection == "Rock")
+return `You win this round! Computer Choice: ${computerSelection}`
+
+else if(playerChoice == "Paper" && computerSelection == "Scissors")
+return `You lost this round! Computer Choice: ${computerSelection}`
+
+// Invalid Input
+else
+return "Please make a valid input (Rock, Paper, Scissors)"
+}
+
+function game(){
+    for(let i = 0; i < 5; i++)
+    {
+        let playerInput = prompt("Please choose rock, paper, or scissors")
+        alert(round(playerInput))
+    }
+}
+game()
+</script>
+</html>
