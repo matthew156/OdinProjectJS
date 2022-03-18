@@ -3,7 +3,6 @@ function downup(string){
     {
         console.log(string)
     }
-    
     else
     {
         console.log(string);
