@@ -9,6 +9,9 @@
 <body>
     <h1>Rock, Paper, Scissors</h1>
     <p>To begin open the console and fight the computer!</p>
+    <button id="rock">Rock</button>
+    <button id="paper">Paper</button>
+    <button id="scissors">Scissors</button>
 </body>
 <script>
 function computerPlay(){
@@ -64,12 +67,25 @@ else
 return "Please make a valid input (Rock, Paper, Scissors)"
 }
 
+const rock = document.querySelector('#rock')
+const paper = document.querySelector('#paper')
+const scissors = document.querySelector('#scissors')
+
+rock.addEventListener('click', e => {
+    console.log(round("Rock"))
+})
+paper.addEventListener('click',  e => {
+    console.log(round("Paper"))
+})
+scissors.addEventListener('click',  e => {
+    console.log(round("Scissors"))
+})
+
+
+
+
 function game(){
-    for(let i = 0; i < 5; i++)
-    {
-        let playerInput = prompt("Please choose rock, paper, or scissors")
-        alert(round(playerInput))
-    }
+ 
 }
 game()
 </script>
