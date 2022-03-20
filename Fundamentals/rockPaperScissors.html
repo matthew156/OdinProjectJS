@@ -12,6 +12,7 @@
     <button id="rock">Rock</button>
     <button id="paper">Paper</button>
     <button id="scissors">Scissors</button>
+    <div id = "container"></div>
 </body>
 <script>
 function computerPlay(){
@@ -31,54 +32,79 @@ function computerPlay(){
     return move
     
 }
+let computerScore = 0;
+let playerScore = 0;
 function round(playerSelection, computerSelection=computerPlay()){
 // Makes the input case insensitive
     let playerChoice = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1).toLowerCase()
-
 // If the inputs are the same
 if(playerSelection == computerSelection)
 return "Draw"
 
 // All the logic for Rock (Win or Lose)
 else if(playerChoice == "Rock" && computerSelection == "Scissors")
-return `You win this round! Computer Choice: ${computerSelection}`
+{
+    playerScore++;
+    return `You win this round! Computer Choice: ${computerSelection}`
+}
 
 else if(playerChoice == "Rock" && computerSelection == "Paper")
-return `You lost this round! Computer Choice: ${computerSelection}`
-
+{
+    computerScore++;
+    return `You lost this round! Computer Choice: ${computerSelection}`
+}
 
 // Logic for Scissors
 else if(playerChoice == "Scissors" && computerSelection == "Paper")
-return `You win this round! Computer Choice: ${computerSelection}`
-
+{
+    playerScore++;
+    return `You win this round! Computer Choice: ${computerSelection}`
+}
 else if(playerChoice == "Scissors" && computerSelection == "Rock")
-return `You lost this round! Computer Choice: ${computerSelection}`
-
+{
+    computerScore++;
+    return `You lost this round! Computer Choice: ${computerSelection}`
+}
 
 // Logic for Paper
 else if(playerChoice == "Paper" && computerSelection == "Rock")
-return `You win this round! Computer Choice: ${computerSelection}`
-
+{
+    playerScore++;
+    return `You win this round! Computer Choice: ${computerSelection}`
+}
 else if(playerChoice == "Paper" && computerSelection == "Scissors")
-return `You lost this round! Computer Choice: ${computerSelection}`
-
+{
+    computerScore++;
+    return `You lost this round! Computer Choice: ${computerSelection}`
+}
 // Invalid Input
 else
+{
 return "Please make a valid input (Rock, Paper, Scissors)"
 }
+}
 
-const rock = document.querySelector('#rock')
-const paper = document.querySelector('#paper')
-const scissors = document.querySelector('#scissors')
+const rock = document.querySelector('#rock');
+const paper = document.querySelector('#paper');
+const scissors = document.querySelector('#scissors');
+const container = document.querySelector("#container");
+const ptag = document.createElement("p");
+const playerScoreDisplay = document.createElement("p");
+const computerScoreDisplay = document.createElement("p");
+
 
 rock.addEventListener('click', e => {
-    console.log(round("Rock"))
+    ptag.textContent= round("Rock");
+    container.appendChild(ptag);
 })
 paper.addEventListener('click',  e => {
-    console.log(round("Paper"))
+    ptag.textContent = round("Paper");
+    container.appendChild(ptag);
 })
 scissors.addEventListener('click',  e => {
-    console.log(round("Scissors"))
+    ptag.textContent = round("Scissors");
+    container.appendChild(ptag)
+
 })
 
 
