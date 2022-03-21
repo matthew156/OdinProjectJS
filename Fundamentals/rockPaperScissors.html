@@ -35,8 +35,13 @@ function computerPlay(){
 let computerScore = 0;
 let playerScore = 0;
 function round(playerSelection, computerSelection=computerPlay()){
-// Makes the input case insensitive
-    let playerChoice = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1).toLowerCase()
+    if(playerScore == 5 || computerScore == 5)
+{
+    gameOver.textContent = `We have a Winner!`;
+    container.appendChild(gameOver);
+}
+    // Makes the input case insensitive
+ let playerChoice = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1).toLowerCase()
 // If the inputs are the same
 if(playerSelection == computerSelection)
 return "Draw"
@@ -45,12 +50,20 @@ return "Draw"
 else if(playerChoice == "Rock" && computerSelection == "Scissors")
 {
     playerScore++;
+    playerScoreDisplay.textContent= `Player Score: ${playerScore}`
+    computerScoreDisplay.textContent = `Computer Score: ${computerScore}`
+    container.appendChild(playerScoreDisplay);
+    container.appendChild(computerScoreDisplay);
     return `You win this round! Computer Choice: ${computerSelection}`
 }
 
 else if(playerChoice == "Rock" && computerSelection == "Paper")
 {
     computerScore++;
+    playerScoreDisplay.textContent= `Player Score: ${playerScore}`
+    computerScoreDisplay.textContent = `Computer Score: ${computerScore}`
+    container.appendChild(playerScoreDisplay);
+    container.appendChild(computerScoreDisplay);
     return `You lost this round! Computer Choice: ${computerSelection}`
 }
 
@@ -58,11 +71,19 @@ else if(playerChoice == "Rock" && computerSelection == "Paper")
 else if(playerChoice == "Scissors" && computerSelection == "Paper")
 {
     playerScore++;
+    playerScoreDisplay.textContent= `Player Score: ${playerScore}`
+    computerScoreDisplay.textContent = `Computer Score: ${computerScore}`
+    container.appendChild(playerScoreDisplay);
+    container.appendChild(computerScoreDisplay);
     return `You win this round! Computer Choice: ${computerSelection}`
 }
 else if(playerChoice == "Scissors" && computerSelection == "Rock")
 {
     computerScore++;
+    playerScoreDisplay.textContent= `Player Score: ${playerScore}`
+    computerScoreDisplay.textContent = `Computer Score: ${computerScore}`
+    container.appendChild(playerScoreDisplay);
+    container.appendChild(computerScoreDisplay);
     return `You lost this round! Computer Choice: ${computerSelection}`
 }
 
@@ -70,11 +91,19 @@ else if(playerChoice == "Scissors" && computerSelection == "Rock")
 else if(playerChoice == "Paper" && computerSelection == "Rock")
 {
     playerScore++;
+    container.appendChild(playerScoreDisplay);
+    playerScoreDisplay.textContent= `Player Score: ${playerScore}`
+    computerScoreDisplay.textContent = `Computer Score: ${computerScore}`
+    container.appendChild(computerScoreDisplay);
     return `You win this round! Computer Choice: ${computerSelection}`
 }
 else if(playerChoice == "Paper" && computerSelection == "Scissors")
 {
     computerScore++;
+        playerScoreDisplay.textContent= `Player Score: ${playerScore}`
+    computerScoreDisplay.textContent = `Computer Score: ${computerScore}`
+    container.appendChild(playerScoreDisplay);
+    container.appendChild(computerScoreDisplay);
     return `You lost this round! Computer Choice: ${computerSelection}`
 }
 // Invalid Input
@@ -91,28 +120,30 @@ const container = document.querySelector("#container");
 const ptag = document.createElement("p");
 const playerScoreDisplay = document.createElement("p");
 const computerScoreDisplay = document.createElement("p");
+const gameOver = document.createElement("h4")
+
+
+
+
+
+
 
 
 rock.addEventListener('click', e => {
     ptag.textContent= round("Rock");
+    console.log(playerScore)
     container.appendChild(ptag);
 })
 paper.addEventListener('click',  e => {
     ptag.textContent = round("Paper");
     container.appendChild(ptag);
+
 })
 scissors.addEventListener('click',  e => {
     ptag.textContent = round("Scissors");
     container.appendChild(ptag)
-
 })
 
 
-
-
-function game(){
- 
-}
-game()
 </script>
 </html>
