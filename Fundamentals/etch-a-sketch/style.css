@@ -1,0 +1,20 @@
+.gray{
+    background-color: rgb(184, 184, 184);
+    height: 2rem;
+    width: 100%;
+}
+
+.col{
+    display: flex;
+    width: auto;
+}
+
+#grid{
+    border: 1px solid black;
+    height: auto;
+    width: auto;
+}
+
+.gray:hover {
+    background-color: rgba(0, 0, 0, 0.678);
+}
