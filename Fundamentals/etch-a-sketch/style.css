@@ -1,3 +1,20 @@
+body{
+    background-color: rgb(194, 72, 72);
+}
+
+h1{
+    text-align: center;
+}
+
+button{
+    width: 150px;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+}
+
 .gray{
     background-color: rgb(184, 184, 184);
     height: 2rem;
@@ -15,6 +32,6 @@
     width: auto;
 }
 
-.gray:hover {
-    background-color: rgba(0, 0, 0, 0.678);
+.black{
+    background-color: rgba(0, 0, 0, 0.932);
 }
