@@ -1,0 +1,25 @@
+.container{
+    display: flex;
+    justify-content: center;
+}
+
+.calc-body {
+    border: 1px solid black;
+    height: 500px;
+    width: 300px;
+    background-color: black;
+}
+
+.display{
+    border: 1px solid black;
+    height: 100px;
+    margin: 6px;
+    margin-bottom: 20px;
+    background-color: aquamarine;
+}
+.btn-row{
+    border: 1px solid gray;
+    height: 50px;
+    margin: 6px;
+    margin-bottom: 20px;
+}
