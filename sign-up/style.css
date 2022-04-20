@@ -1,0 +1,47 @@
+/* CSS RESET AND FONT IMPORTS */
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+@font-face {
+    font-family: Norse-Bold;
+    src: url(static/Norse-Bold.otf);
+}
+
+/* CONTAINER FOR LEFT AND RIGHT SIDEBARS */
+.container{
+    display: flex;
+}
+/* LEFT SIDEBAR */
+.left-sidebar{
+    display: flex;
+    align-items: center;
+    background-image: url("static/img/background-img.jpg");
+    background-size: cover;
+    height: 45rem;
+    width: 30rem;
+}
+.logo {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 6rem;
+    width: 30rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#odin-img{
+    height: 6rem;
+    width:auto;
+}
+
+/* RIGHT SIDEBAR */
+
+
+#odin{
+    color: white;
+    font-family: Norse-Bold;
+    font-size: 3rem;
+}
