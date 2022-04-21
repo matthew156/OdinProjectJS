@@ -16,9 +16,66 @@
             </div>
         </div>
         <div class="right-form">
-            <h1>Filler</h1>
-            <form></form>
+            <div class="top">
+                <h4>This is not a real online service! You know you need something like this in your life to help you realize your deepest dreams. 
+                    Sign up <em>now</em> to get started. </h4>
+                
+                <h4>You <em>know</em> you want to.</h4>
+            </div>
+            <div class="form">
+                <h4>Let's do this!</h4>
+                <form id="form" action="#">
+                <div class="appearance">
+                    <div class="col-1">
+                        <p>First Name:</p>
+                        <input name="first_name" type="text" required>
+                        <p>Email:</p>
+                        <input name="email" type="text" required>
+                        <p>Password:</p>
+                        <input name="password" type="text" class="password">
+                    </div>
+                    <div>
+                        <p>Last Name:</p>
+                        <input name="first_name" type="text">
+                        <p>Phone Number:</p>
+                        <input name="first_name" type="text">
+                        <p>Confirm Password:</p>
+                        <input name="first_name" type="text" class="confPassword">
+                    </div>
+                </div>
+                <input type="submit" value="Create Account" class="btn">
+                </form>
+            </div>
         </div>
     </div>
+    <script>
+        // DOM VARIABLES
+        let password = document.querySelector('.password')
+        
+        let confPassword = document.querySelector('.confPassword')
+        
+        let form =  document.getElementById("form")
+        
+        let col1 =  document.querySelector('.col-1')
+        
+        
+        // CREATES THE INVALID TEXT
+        const invalid = document.createElement('p')
+            invalid.style.color = 'red'
+            invalid.textContent = `Passwords don't match`
+
+        // IF PASSWORDS DON'T MATCH
+         function submit(e)
+        {
+            e.preventDefault()
+            if(password.value != confPassword.value){
+                password.classList.add('invalidPassword')
+                confPassword.classList.add('invalidPassword')
+                console.log('submitted!')
+                col1.appendChild(invalid)
+        }
+    }
+    form.addEventListener('submit', submit)
+    </script>
 </body>
 </html>
